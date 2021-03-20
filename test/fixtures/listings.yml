@@ -1,0 +1,29 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  category: MyString
+  deal_start_date: 2021-03-20
+  deal_end_date: 2021-03-20
+  auction_end_time: 2021-03-20 12:05:37
+  estimated_volume: 1
+  min_bid: 1
+  unit_type: MyString
+  closed_bids: false
+  description: MyText
+  requirements: MyString
+  auction_open: false
+
+two:
+  user: two
+  category: MyString
+  deal_start_date: 2021-03-20
+  deal_end_date: 2021-03-20
+  auction_end_time: 2021-03-20 12:05:37
+  estimated_volume: 1
+  min_bid: 1
+  unit_type: MyString
+  closed_bids: false
+  description: MyText
+  requirements: MyString
+  auction_open: false
