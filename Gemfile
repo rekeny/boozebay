@@ -17,7 +17,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1.7'
 
 gem 'devise'
-gem 'devise-jwt'
+gem 'simple_token_authentication'
+# gem 'devise-jwt'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
