@@ -16,7 +16,14 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = 'e557176e27e93a1d1d6b0412e4f29257eda66ef96411b76ecc5ad23cfe37b2045243a96b31548daae35b00e5830f3585345cfec2c44d1df0cca70d4cea673401'
   config.jwt do |jwt|
-    jwt.secret = ENV['DEVISE_JWT_SECRET_KEY']
+    jwt.secret = ENV['DEVISE_SECRET_KEY']
+    jwt.dispatch_requests = [
+        ['POST', %r{^/login$}]
+      ]
+      jwt.revocation_requests = [
+        ['DELETE', %r{^/logout$}]
+      ]
+    jwt.expiration_time = 5.minutes.to_i
   end
 
   # ==> Controller configuration
@@ -100,7 +107,7 @@ Devise.setup do |config|
   # Notice that if you are skipping storage for all authentication paths, you
   # may want to disable generating routes to Devise's sessions controller by
   # passing skip: :sessions to `devise_for` in your config/routes.rb
-  config.skip_session_storage = [:http_auth]
+  config.skip_session_storage = [:http_auth, :params_auth]
 
   # By default, Devise cleans up the CSRF token on authentication to
   # avoid CSRF token fixation attacks. This means that, when using AJAX
@@ -266,7 +273,7 @@ Devise.setup do |config|
   # should add them to the navigational formats lists.
   #
   # The "*/*" below is required to match Internet Explorer requests.
-  # config.navigational_formats = ['*/*', :html]
+  config.navigational_formats = []
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
