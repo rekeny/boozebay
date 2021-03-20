@@ -18,7 +18,6 @@ gem 'puma', '~> 4.1'
 
 gem 'devise'
 gem 'devise-jwt'
-
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
